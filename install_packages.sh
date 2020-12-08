@@ -23,6 +23,11 @@ echo "Installing ohmyzsh..."
 chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+echo "Installing powerline-fonts"
+git clone https://github.com/powerline/fonts.git --depth=1
+./fonts/install.sh
+rm -rf fonts
+
 echo "Installing App Store Apps..."
 mas lucky messenger
 mas lucky LINE
