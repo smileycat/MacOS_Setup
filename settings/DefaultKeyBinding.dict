@@ -1,0 +1,22 @@
+// Put this file under ~/Library/KeyBindings/
+
+"\UF729"   = "moveToBeginningOfLine:";							// Home
+"\UF72B"   = "moveToEndOfLine:";								// End
+
+"$\UF72B"  = "moveToEndOfLineAndModifySelection:";				// Shift + End
+"$\UF729"  = "moveToBeginningOfLineAndModifySelection:";		// Shift + Home
+
+"@$\UF72B" = "moveToEndOfDocumentAndModifySelection:";			// Shift + Cmd  + End
+"@$\UF729" = "moveToBeginningOfDocumentAndModifySelection:";	// Shift + Cmd  + Home
+
+"@\UF703"  = "moveWordForward:";								// Cmd  + RightArrow
+"@\UF702"  = "moveWordBackward:";								// Cmd  + LeftArrow
+
+"@$\UF702" = "moveWordBackwardAndModifySelection:";				// Shift + Cmd  + Leftarrow
+"@$\UF703" = "moveWordForwardAndModifySelection:";				// Shift + Cmd  + Rightarrow
+
+"\UF72C"   = "pageUp:";											// PageUp
+"\UF72D"   = "pageDown:";										// PageDown
+
+"@\U007F"  = "deleteWordBackward:";								// Cmd  + Backspace
+"@\UF728"  = "deleteWordForward:";								// Cmd  + Delete
