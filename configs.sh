@@ -5,9 +5,9 @@ mkdir - p ~/Library/DefaultKeyBindings
 cp ./settings/DefaultKeyBinding.dict ~/Library/DefaultKeyBindings/
 
 echo "Setting zsh configs..."
-cp ./settings/.zshrc ~/
-cp ./settings/.bullet-train.zsh-theme ~/.oh-my-zsh/themes/
 cp ./settings/.vimrc ~/
+cp ./settings/.zshrc ~/
+cp ./settings/bullet-train.zsh-theme ~/.oh-my-zsh/themes/
 
 echo "Setting git configs..."
 git config --global user.name "smileycat"

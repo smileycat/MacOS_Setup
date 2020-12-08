@@ -1,4 +1,4 @@
-export ZSH=/Users/smileycat/.oh-my-zsh
+export ZSH=/Users/$(id -un)/.oh-my-zsh
 
 ZSH_THEME="bullet-train"
 BULLETTRAIN_PROMPT_ORDER=(
