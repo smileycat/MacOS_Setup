@@ -4,7 +4,7 @@ echo "Installing xcode-cli tools"
 xcode-select --install
 
 echo "Installing homebrew..."
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 echo "Updating brew..."
 brew upgrade && brew update
@@ -13,8 +13,10 @@ echo "Installing brew formulaes..."
 brew install git node zsh zsh-completions mas
 
 echo "Installing casks..."
-brew cask install docker visual-studio-code google-chrome sourcetree java intellij-idea-ce
-brew cask install mongodb-compass postman iina tiles steam battle-net folx appcleaner
+brew install --cask docker visual-studio-code google-chrome sourcetree intellij-idea-ce
+brew install --cask mongodb-compass postman iina tiles steam folx appcleaner musescore
+brew install --cask qlvideo qlstephen qlmarkdown syntax-highlight
+xattr -d -r com.apple.quarantine ~/Library/QuickLook/
 
 echo "Cleaning up brew..."
 brew cleanup
@@ -29,10 +31,10 @@ git clone https://github.com/powerline/fonts.git --depth=1
 rm -rf fonts
 
 echo "Installing App Store Apps..."
+mas signin liaocrong@gmail.com
 mas lucky messenger
 mas lucky LINE
 mas lucky unarchiver
-mas lucky glance
 mas lucky colorslurp
 mas lucky JSONPeep
 mas lucky Cascadea
