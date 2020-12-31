@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "Setting Key Bindings..."
-mkdir - p ~/Library/KeyBindings
+mkdir -p ~/Library/KeyBindings
 cp ./settings/DefaultKeyBinding.dict ~/Library/KeyBindings/
 
 echo "Setting zsh configs..."
