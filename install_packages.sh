@@ -5,19 +5,19 @@ xcode-select --install
 echo "Installing homebrew..."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-echo "Updating brew..."
+echo "Updating homebrew..."
 brew upgrade && brew update
 
-echo "Installing brew formulaes..."
-brew install git node zsh zsh-completions mas
+echo "Installing homebrew formulae..."
+brew install git node java zsh zsh-completions mas
 
 echo "Installing casks..."
-brew install --cask docker visual-studio-code google-chrome sourcetree intellij-idea-ce
-brew install --cask mongodb-compass postman iina tiles steam folx appcleaner musescore
-brew install --cask qlvideo qlstephen qlmarkdown syntax-highlight
+brew install --cask docker visual-studio-code google-chrome sourcetree intellij-idea-ce postman
+brew install --cask mongodb-compass iina steam folx appcleaner musescore adobe-creative-cloud
+brew install --cask qlvideo qlstephen qlmarkdown syntax-highlight tiles
 xattr -d -r com.apple.quarantine ~/Library/QuickLook/
 
-echo "Cleaning up brew..."
+echo "Cleaning up homebrew..."
 brew cleanup
 
 echo "Installing ohmyzsh..."
