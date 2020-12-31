@@ -1,8 +1,7 @@
 #!/bin/bash
-
 echo "Setting Key Bindings..."
-mkdir - p ~/Library/DefaultKeyBindings
-cp ./settings/DefaultKeyBinding.dict ~/Library/DefaultKeyBindings/
+mkdir - p ~/Library/KeyBindings
+cp ./settings/DefaultKeyBinding.dict ~/Library/KeyBindings/
 
 echo "Setting zsh configs..."
 cp ./settings/.vimrc ~/
@@ -27,7 +26,7 @@ defaults write com.apple.dock show-recents -bool false
 killall Dock
 
 # echo "Finder - Disable warning when changing file extension"
-# defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
 echo "TextEdit - Default plain text mode and UTF-8 encodings"
 defaults write com.apple.TextEdit RichText -int 0
@@ -36,3 +35,5 @@ defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
 
 echo "Preferences - Reduce keyboard repeat delay"
 defaults write -g KeyRepeat 2
+
+echo "Please restart to take effect..."

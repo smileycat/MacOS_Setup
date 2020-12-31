@@ -1,5 +1,4 @@
 #!/bin/bash
-
 echo "Installing xcode-cli tools"
 xcode-select --install
 
