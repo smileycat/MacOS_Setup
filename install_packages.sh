@@ -1,15 +1,20 @@
 #!/bin/bash
-echo "Installing xcode-cli tools"
+echo "Installing xcode-cli tools..."
 xcode-select --install
 
 echo "Installing homebrew..."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-echo "Updating homebrew..."
-brew upgrade && brew update
-
 echo "Installing homebrew formulae..."
 brew install git node java zsh zsh-completions mas
+
+echo "Setting git configs..."
+git config --global user.name "smileycat"
+git config --global user.email "liaocrong@outlook.com"
+git config --global alias.st "status"
+git config --global alias.cm "commit -m"
+git config --global alias.acm "!git add . && git commit -m"
+git config --global credential.helper store
 
 echo "Installing casks..."
 brew install --cask docker visual-studio-code google-chrome sourcetree intellij-idea-ce postman
@@ -21,21 +26,26 @@ echo "Cleaning up homebrew..."
 brew cleanup
 
 echo "Installing ohmyzsh..."
-chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-echo "Installing powerline-fonts"
+echo "Setting zsh configs..."
+cp ./settings/.vimrc ~/
+cp ./settings/.zshrc ~/
+cp ./settings/bullet-train.zsh-theme ~/.oh-my-zsh/themes/
+chsh -s $(which zsh)
+
+echo "Installing powerline-fonts..."
 git clone https://github.com/powerline/fonts.git --depth=1
 ./fonts/install.sh
 rm -rf fonts
 
-echo "Installing App Store Apps..."
-mas signin liaocrong@gmail.com
-mas lucky messenger
-mas lucky LINE
-mas lucky unarchiver
-mas lucky colorslurp
-mas lucky JSONPeep
-mas lucky Cascadea
-mas lucky "Adblock plus"
-mas lucky "Intelligent Translator"
+# Please signin to App Store before starting the script
+apps=(
+    Messenger LINE unarchiver colorslurp JSONPeep Cascadea
+    "Intelligent Translator" "Adblock Plus for Safari ABP"
+)
+
+for app in "${apps[@]}"; do
+    echo -e "\nInstalling "$app"..."
+    mas lucky "$app"
+done
