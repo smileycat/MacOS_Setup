@@ -16,15 +16,6 @@ git config --global alias.cm "commit -m"
 git config --global alias.acm "!git add . && git commit -m"
 git config --global credential.helper store
 
-echo "Installing casks..."
-brew install --cask docker visual-studio-code google-chrome sourcetree intellij-idea-ce postman
-brew install --cask mongodb-compass iina steam folx appcleaner musescore adobe-creative-cloud
-brew install --cask qlvideo qlstephen qlmarkdown syntax-highlight tiles
-xattr -d -r com.apple.quarantine ~/Library/QuickLook/
-
-echo "Cleaning up homebrew..."
-brew cleanup
-
 echo "Installing ohmyzsh..."
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
@@ -49,3 +40,13 @@ for app in "${apps[@]}"; do
     echo -e "\nInstalling "$app"..."
     mas lucky "$app"
 done
+
+echo "Installing homebrew casks..."
+brew install --cask qlvideo qlstephen qlmarkdown syntax-highlight tiles
+xattr -d -r com.apple.quarantine ~/Library/QuickLook/
+brew install --cask docker visual-studio-code google-chrome sourcetree intellij-idea-ce insomnia
+brew install --cask mongodb-compass iina steam folx appcleaner musescore adobe-creative-cloud
+brew install --cask microsoft-word microsoft-excel vmware-fusion
+
+echo "Cleaning up homebrew..."
+brew cleanup

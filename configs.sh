@@ -6,6 +6,8 @@ cp ./settings/DefaultKeyBinding.dict ~/Library/KeyBindings/
 echo "Setting keyboard and touchpad..."
 defaults write -g KeyRepeat -int 2
 defaults write -g InitialKeyRepeat -int 15
+# disables the accent key menu when holding a key
+defaults write -g ApplePressAndHoldEnabled -bool false
 # touchpad click firmness - light
 defaults write com.apple.AppleMultitouchTrackpad FirstClickThreshold -int 0
 defaults write com.apple.AppleMultitouchTrackpad SecondClickThreshold -int 0
