@@ -1,4 +1,5 @@
 export ZSH=/Users/$(id -un)/.oh-my-zsh
+export PATH="$PATH:/opt/homebrew/bin"
 
 ZSH_THEME="bullet-train"
 BULLETTRAIN_PROMPT_ORDER=(
@@ -18,6 +19,6 @@ BULLETTRAIN_TIME_BG="white"
 BULLETTRAIN_GIT_FG="black"
 BULLETTRAIN_GIT_BG="white"
 
-plugins=(git osx)
+plugins=(git macos)
 
 source $ZSH/oh-my-zsh.sh
