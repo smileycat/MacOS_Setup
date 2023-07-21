@@ -1,7 +1,9 @@
 #!/bin/bash
 BREW_FORMULAE="git node java zsh zsh-completions mas"
-# adobe-creative-cloud folx docker mongodb-compass tiles
-BREW_CASKS="visual-studio-code insomnia discord iina steam appcleaner musescore microsoft-word microsoft-excel"
+
+# folx docker mongodb-compass tiles
+BREW_CASKS="visual-studio-code insomnia discord iina steam appcleaner musescore microsoft-word microsoft-excel google-chrome"
+
 # QuickLook plugins
 QUICKLOOK="qlstephen qlmarkdown syntax-highlight"
 
@@ -9,8 +11,8 @@ QUICKLOOK="qlstephen qlmarkdown syntax-highlight"
 APPS=(
     Messenger
     Cascadea
+    Translatium
     "LINE"
     "The Unarchiver"
-    "Intelligent Translator"
     "Adblock Plus for Safari ABP"
 )

@@ -2,6 +2,7 @@
 # Please signin to App Store before executing the script
 
 source constants.sh
+echo
 echo "PROCEED TO INSTALL DEV TOOLS AND:"
 echo "QUICKLOOK  "$QUICKLOOK
 echo "FORMULAE   "$BREW_FORMULAE
@@ -16,6 +17,13 @@ xcode-select --install
 read -p "Once xcode installation is completed, press any key to continue..."
 echo "Installing homebrew..."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+read -p "Once homebrew setup is completed, press any key to continue..."
+
+echo "Installing powerline-fonts..."
+git clone https://github.com/powerline/fonts.git --depth=1
+./fonts/install.sh
+rm -rf fonts
 
 echo "Installing homebrew formulae..."
 brew install $BREW_FORMULAE
@@ -34,11 +42,6 @@ cp ./settings/.vimrc ~
 cp ./settings/.zshrc ~
 cp ./settings/bullet-train.zsh-theme ~/.oh-my-zsh/themes
 chsh -s $(which zsh)
-
-echo "Installing powerline-fonts..."
-git clone https://github.com/powerline/fonts.git --depth=1
-./fonts/install.sh
-rm -rf fonts
 
 for app in "${APPS[@]}"; do
     echo -e "\nInstalling "$app"..."
