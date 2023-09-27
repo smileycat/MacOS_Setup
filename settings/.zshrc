@@ -19,6 +19,6 @@ BULLETTRAIN_TIME_BG="white"
 BULLETTRAIN_GIT_FG="black"
 BULLETTRAIN_GIT_BG="white"
 
-plugins=(git macos)
+plugins=(git macos zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
