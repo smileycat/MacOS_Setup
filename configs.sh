@@ -25,6 +25,10 @@ defaults write com.apple.dock minimize-to-application -bool true
 defaults write com.apple.dock showAppExposeGestureEnabled -bool true
 killall Dock
 
+echo "Disable DS_Store on network & external drives..."
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+
 echo "Setting finder..."
 defaults write com.apple.finder SidebarWidth -int 144
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
