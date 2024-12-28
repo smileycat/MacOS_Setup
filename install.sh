@@ -51,6 +51,7 @@ for app in "${APPS[@]}"; do
 done
 
 echo "Installing homebrew casks..."
+brew tap jeffreywildman/homebrew-virt-manager # for virt-viewer
 brew install --cask $QUICKLOOK
 brew install --cask $BREW_CASKS
 
