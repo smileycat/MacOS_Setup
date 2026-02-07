@@ -52,5 +52,8 @@ defaults write com.apple.TextEdit RichText -int 0
 defaults write com.apple.TextEdit PlainTextEncoding -int 4
 defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
 
+echo "Disable \"Where from\" field in downloaded files..."
+defaults write com.apple.LaunchServices LSQuarantine -bool NO
+
 read -p "Press any key to restart to take effect..."
 sudo shutdown -r now
